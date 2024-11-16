@@ -1,0 +1,16 @@
+{% extends "base.html "%}
+{% load bootstrap5 %}
+
+{% block conteudo %}
+<h1>Atualizar Status de  Tarefas</h1>
+{% for tarefa in tarefas %}
+
+<ul>
+    <li>{{tarefa.id}} - {{ tarefa.tarefa }}
+        <a href="{% url 'update' tarefa.id %}">Editar</a>
+        <a href="{% url 'delete' tarefa.id %}">Deletar</a>
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock%}

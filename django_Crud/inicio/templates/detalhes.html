@@ -1,0 +1,20 @@
+{% extends "base.html "%}
+{% load bootstrap5 %}
+
+{% block conteudo %}
+<h1>Lista de detalhes das Tarefas </h1>
+{% for tarefa in tarefas %}
+<ul>
+    <li>
+        ID: {{tarefa.id}}
+    </li>
+    <li>
+        Tarefa: {{tarefa.tarefa}}
+    </li>
+    <li>
+        Descrição: {{tarefa.descricao}}
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock%}

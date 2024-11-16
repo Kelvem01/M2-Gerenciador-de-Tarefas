@@ -1,0 +1,19 @@
+{% extends "base.html "%}
+
+{% load bootstrap5 %}
+
+{% block conteudo %}
+<div class="col-md-6">
+  {% if sucesso %}
+  <p class="alert alert-success">Tarefa enviada com sucesso!</p>
+  {% else %}
+  <form action="" method="POST"> 
+    {% csrf_token %}
+  {% bootstrap_form form %}
+    <hr>
+    <button class="btn-bd-primary" type="submit">Salvar</button>
+
+  </form>
+  {% endif %}
+</div>
+{% endblock%}

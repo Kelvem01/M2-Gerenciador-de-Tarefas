@@ -1,0 +1,31 @@
+{% extends "base.html "%}
+{% load bootstrap5 %}
+
+{% block conteudo %}
+{% for tarefa in tarefas %}
+
+<div class="col">
+  <div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+      <h4 class="my-0 fw-normal">{{tarefa.tarefa}}</h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">
+        {% if tarefa.prioridade == 0 %}
+        Nivel de prioridade: Baixa
+        {% elif tarefa.prioridade == 1 %}
+        Nivel de prioridade: Média
+        {% else %}
+        Nivel de prioridade: Alta
+        <small class="text-body-secondary fw-light">/dia</small></h1>
+        {% endif%}
+      <ul class="list-unstyled mt-3 mb-4">
+        <li></li>
+        <li>Descrição: {{tarefa.descricao}}</li>
+      </ul>
+      <button type="button" class="w-100 btn btn-lg btn-primary">Finalizar</button>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
